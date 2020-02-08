@@ -8,15 +8,16 @@ class Song
     @name = name
     @artist = artist
     @genre = genre
-    save
+    @@all << self
+    # save
   end   
   
   def self.all
     @@all
   end
   
-  def save 
-    @all << self 
-  end 
+  # def save 
+  #   @all << self 
+  # end 
   
 end 

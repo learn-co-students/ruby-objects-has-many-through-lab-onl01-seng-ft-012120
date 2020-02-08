@@ -6,17 +6,17 @@ class Doctor
   
   def initialize(name)
     @name = name 
-    
-    save
+    @@all << self
+    # save
   end   
   
   def self.all
     @@all 
   end
   
-  def save
-    @@all << self
-  end   
+  # def save
+  #   @@all << self
+  # end   
   
   def new_appointment(patient, date)
     Appointment.new(date, patient, self)
@@ -27,7 +27,12 @@ class Doctor
   end 
   
   def patients
-    appointments.collect {|appointment| appointment.patient}
+    #appointments.collect {|appointment| appointment.patient}
+    array = []
+    appointments.each do |appointment|
+      array << appointment.patient 
+    end 
+    array 
   end 
   
 end   
