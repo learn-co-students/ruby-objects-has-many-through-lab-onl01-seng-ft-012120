@@ -13,7 +13,8 @@ class Doctor
   end
 
   def patients
-    appointments.map {|appointment| appointment.patient}
+    appointments.map {|appointment| appointment.date}
+    #binding.pry
   end
 
   def self.all
